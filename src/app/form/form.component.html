@@ -1,0 +1,188 @@
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+
+<form [formGroup]="profileForm" (ngSubmit)="save()">
+    <div class="form-group">
+      <label for="exampleInputName">First Name</label>
+      <input type="text" formControlName="firstName" class="form-control" id="exampleInputName"  placeholder="Enter Name">
+     <div class="alert alert-danger" *ngIf="profileForm.get('firstName').touched &&profileForm.get('firstName').invalid">
+       this feild is required</div>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputName">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control" id="exampleInputName"  placeholder="Enter Name">
+        <div class="alert alert-danger" *ngIf="profileForm.get('lastName').touched &&profileForm.get('lastName').invalid">
+          this feild is required</div>
+       
+      </div>
+     
+     <div class="form-group">
+        <label for="exampleInputEmail">Email</label>
+        <input type="text" formControlName="Email" class="form-control" id="exampleInputEmail"  placeholder="Enter Email">
+        <div class="alert alert-danger" *ngIf="profileForm.get('Email').touched && profileForm.get('Email').invalid">
+          this feild is required</div>
+       
+          <div class="alert alert-danger" *ngIf="profileForm.get('Email').errors && profileForm.get('Email').errors.pattern">
+            Email is invalid</div>
+        
+      </div>
+
+     <div class="form-group">
+        <label for="exampleInputPhone">Phone Number </label>
+        <input type="text" formControlName="phoneNum" class="form-control" id="exampleInputPhone"  placeholder="Enter phone number">
+     </div>
+
+     <div class="form-group">
+        <label for="exampleInputWeight"> Weight </label>
+        <input type="text" formControlName="weight" class="form-control" id="exampleInputWeight"  placeholder="Enter your weight">
+     </div>
+  
+     <div class="form-group">
+        <label for="exampleInputHeight"> Height </label>
+        <input type="text" formControlName="height" class="form-control" id="exampleInputHeight"  placeholder="Enter your height">
+     </div>
+  
+
+   
+    <fieldset class="form-group" >
+        <div class="row">
+          <label class="col-form-label col-sm-4 pt-0"> Are you married?</label>
+         <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input"  formControlName="married" type="radio" name="married"  value="Yes">
+              <label class="form-check-label" for="gridRadios1">
+               Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" formControlName="married"  type="radio" name="married" value="No">
+              <label class="form-check-label" for="gridRadios2">
+               No
+              </label>
+            </div>
+         </div>
+         </div>
+    </fieldset>
+
+
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               name="dp" formControlName="dateTime" ngbDatepicker #d="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+        </div>
+      </div>
+    </div>
+   
+
+
+   
+
+
+<button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<div class="card" style="width: 20rem;">
+    <div class="card-body">
+<form class="form-group" [formGroup]="profileForm" (ngSubmit)="save()">
+    <h2 class="text-center">Sign up</h2>       
+    <div class="form-group">
+        <input type="text" class="form-control" formControlName="firstName" placeholder="First Name" >
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" formControlName="phoneNum" placeholder="Phone Numer">
+    </div>
+    
+    <div class="form-group">
+        <input type="text" class="form-control" formControlName="weight" placeholder="Weight">
+    </div>
+    <div>
+    <label for="marriage"  class="form-check-label">Married?</label>
+    <div class="form-check">
+        <input class="form-check-input"  formControlName="married" type="checkbox" value="" id="checkbox1">
+        <label class="form-check-label"  formControlName="married" for="checkbox">
+          Yes
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="checkbox2" >
+        <label class="form-check-label" for="checkbox">
+         No
+        </label>
+      </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+           <div class='col-sm-6'>
+              <div class="form-group">
+                 <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                 </div>
+              </div>
+           </div>
+           <script type="text/javascript">
+              $(function () {
+                  $('#datetimepicker1').datetimepicker();
+              });
+           </script>
+        </div>
+     </div>
+
+    <div>
+        <button  class="btn btn-success">Save</button>
+    </div>
+    
+</form>
+</div>
+</div>
+
+ -->
